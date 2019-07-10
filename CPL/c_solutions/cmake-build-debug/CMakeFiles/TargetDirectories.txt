@@ -1,0 +1,6 @@
+D:/cs_rkm/cs_rkm/CPL/c_solutions/cmake-build-debug/CMakeFiles/c_solutions.dir
+D:/cs_rkm/cs_rkm/CPL/c_solutions/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/cs_rkm/cs_rkm/CPL/c_solutions/cmake-build-debug/CMakeFiles/minesweeper2.dir
+D:/cs_rkm/cs_rkm/CPL/c_solutions/cmake-build-debug/CMakeFiles/minesweeper.dir
+D:/cs_rkm/cs_rkm/CPL/c_solutions/cmake-build-debug/CMakeFiles/buff.dir
+D:/cs_rkm/cs_rkm/CPL/c_solutions/cmake-build-debug/CMakeFiles/edit_cache.dir
