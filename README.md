@@ -3,4 +3,4 @@
 
 # FSL
 
-<b>[PENN STATE ONLINE COURSE]:<b> [https://newonlinecourses.science.psu.edu/stat414/node/3/]
+<b><a href="https://newonlinecourses.science.psu.edu/stat414/node/3/">[PENN STATE ONLINE COURSE]</a><b>
