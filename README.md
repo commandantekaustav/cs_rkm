@@ -10,13 +10,13 @@
 - [x] Prac Egs
 - [x] Stat110 : Lecture 2
 - [x] Prac Egs
-- [ ] Stat110 : Lecture 3
+- [x] Stat110 : Lecture 3
 - [ ] Prac Egs
-- [ ] Stat110 : Lecture 4
+- [x] Stat110 : Lecture 4
 - [ ] Prac Egs
-- [ ] Stat110 : Lecture 5
+- [x] Stat110 : Lecture 5
 - [ ] Prac Egs
-- [ ] Stat110 : Lecture 6
+- [x] Stat110 : Lecture 6
 - [ ] Prac Egs
 - [ ] Stat110 : Lecture 7
 - [ ] Prac Egs
@@ -33,7 +33,7 @@
 
 ## Resources
 ### <a href="https://newonlinecourses.science.psu.edu/stat414/node/3/">PENN STATE UNIVERSITY | ONLINE COURSE ON STATISTIC AND PROBABILITY</a></b>
- 
+### <a href="http://ai.stanford.edu/~paskin/gm-short-course/lec1.pdf"> A brief reference </a>
 ### STAT110 | Probability Course by Prof. Joe Blitzstein
 - <b><a href="https://projects.iq.harvard.edu/stat110/about">STAT110 | Course Homepage</a></b>
 - <b><a href="https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo">STAT110 | Youtube Version Playlist</a></b>
