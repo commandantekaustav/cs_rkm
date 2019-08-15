@@ -143,6 +143,12 @@ class Stack:
         "Pop the most recently pushed item from the stack"
         return self.list.pop()
 
+    #defined a top function for better modularity
+    def top(self):
+        top = self.list.pop()
+        self.list.append(top)
+        return top
+
     def isEmpty(self):
         "Returns true if the stack is empty"
         return len(self.list) == 0
