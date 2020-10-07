@@ -88,14 +88,14 @@ def depthFirstSearch(problem):
     """
     "*** YOUR CODE HERE ***"
 
-    print("Start:", problem.getStartState())
-    print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
-    print("Start's successors:", problem.getSuccessors(problem.getStartState()))
+#    print("Start:", problem.getStartState())
+ #   print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
+  #  print("Start's successors:", problem.getSuccessors(problem.getStartState()))
 
     explored = []
-    node = (problem.getStartState(),[])
+    node = [problem.getStartState(),[]]
     stack = util.Stack()
-    stack.push((problem.getStartState(),[]))
+    stack.push(node)
 
     while(True):        #as described in the book
         if(stack.isEmpty()):
@@ -104,7 +104,9 @@ def depthFirstSearch(problem):
             #currentState,path = stack.top()
             top = stack.pop()
             stack.push(top)
-            if (top[0] not in explored):
+            if (top[0] in explored):
+                pass
+            else:
                 explored.append(top[0])
                 if(problem.isGoalState(top[0])):
                     return top[1]
@@ -112,14 +114,13 @@ def depthFirstSearch(problem):
                     stack.pop()
                     for successors in problem.getSuccessors(top[0]):
                         if successors[0] not in explored:
-                            stack.push((successors[0],top[1]+[successors[1]]))
-                    #stack.push(problem.getSuccessors(top))
+                            stack.push([successors[0],top[1]+[successors[1]]])
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
     explored = []
-    node = (problem.getStartState(),[])
+    node = [problem.getStartState(),[]]
     frontier = util.Queue()
     frontier.push(node)
 
@@ -128,37 +129,38 @@ def breadthFirstSearch(problem):
             return -1
         else:
             top = frontier.pop()
-            if (top[0] not in explored):
+            if (top[0] in explored):
+                pass
+            else:
                 explored.append(top[0])
                 if(problem.isGoalState(top[0])):
                     return top[1]
                 for successors in problem.getSuccessors(top[0]):
-                    frontier.push((successors[0],top[1]+[successors[1]]))
-
-
+                    frontier.push([successors[0],top[1]+[successors[1]]])
 
     util.raiseNotDefined()
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-
     explored = []
-    node = (problem.getStartState(),[],problem.getCostOfActions([]))
+    node = [problem.getStartState(),[]]
     frontier = util.PriorityQueue()
-    frontier.push(node,0)
+    frontier.push(node,problem.getCostOfActions([]))
 
     while(True):
         if(frontier.isEmpty()):
             return -1
         else:
             top = frontier.pop()
-            if (top[0] not in explored):
+            if (top[0] in explored):
+                pass
+            else:
                 explored.append(top[0])
                 if(problem.isGoalState(top[0])):
                     return top[1]
                 for successors in problem.getSuccessors(top[0]):
-                    frontier.update((successors[0],top[1]+[successors[1]],top[2]+problem.getCostOfActions(top[1]+[successors[1]])),top[2]+problem.getCostOfActions(top[1]+[successors[1]]))
+                    frontier.update([successors[0],top[1]+[successors[1]]],problem.getCostOfActions(top[1]+[successors[1]]))
 
 """
     explored = []
@@ -187,26 +189,57 @@ def nullHeuristic(state, problem=None):
     """
     return 0
 
-def aStarSearch(problem, heuristic=nullHeuristic):
+def aStarSearch(problem, heuristic=None):
     """Search the node that has the lowest combined cost and heuristic first."""
     "*** YOUR CODE HERE ***"
 
     explored = []
-    node = (problem.getStartState(),[],problem.getCostOfActions([]))
+    node = [problem.getStartState(),[]]
+#newedit
     frontier = util.PriorityQueue()
-    frontier.push(node,0)
+    frontier.push(node,problem.getCostOfActions([])+heuristic(problem.getStartState(),problem))
 
     while(True):
         if(frontier.isEmpty()):
             return -1
         else:
             top = frontier.pop()
-            if (top[0] not in explored):
+            if (top[0] in explored):
+                pass
+            else:
                 explored.append(top[0])
                 if(problem.isGoalState(top[0])):
                     return top[1]
                 for successors in problem.getSuccessors(top[0]):
-                    frontier.update((successors[0],top[1]+[successors[1]],top[2]+problem.getCostOfActions(top[1]+[successors[1]])+nullHeuristic(successors[0])),top[2]+problem.getCostOfActions(top[1]+[successors[1]])+nullHeuristic(successors[0]))
+                    frontier.update([successors[0],top[1]+[successors[1]]],problem.getCostOfActions(top[1]+[successors[1]])+heuristic(successors[0],problem))
+
+    util.raiseNotDefined()
+
+
+#extra content
+def greedySearch(problem, heuristic=None):
+    """Search the node that has the lowest combined cost and heuristic first."""
+    "*** YOUR CODE HERE ***"
+
+    explored = []
+    node = [problem.getStartState(),[]]
+#newedit
+    frontier = util.PriorityQueue()
+    frontier.push(node,heuristic(problem.getStartState(),problem))
+
+    while(True):
+        if(frontier.isEmpty()):
+            return -1
+        else:
+            top = frontier.pop()
+            if (top[0] in explored):
+                pass
+            else:
+                explored.append(top[0])
+                if(problem.isGoalState(top[0])):
+                    return top[1]
+                for successors in problem.getSuccessors(top[0]):
+                    frontier.update([successors[0],top[1]+[successors[1]]],heuristic(successors[0],problem))
 
     util.raiseNotDefined()
 
@@ -216,3 +249,4 @@ bfs = breadthFirstSearch
 dfs = depthFirstSearch
 astar = aStarSearch
 ucs = uniformCostSearch
+greedy = greedySearch
