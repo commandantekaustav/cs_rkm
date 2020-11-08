@@ -38,3 +38,8 @@
 - <b><a href="https://projects.iq.harvard.edu/stat110/about">STAT110 | Course Homepage</a></b>
 - <b><a href="https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo">STAT110 | Youtube Version Playlist</a></b>
 - <b><a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">STAT110 | Companion Book (Official Online Edition)</a></b>
+
+
+
+
+# Had to drop out :)
